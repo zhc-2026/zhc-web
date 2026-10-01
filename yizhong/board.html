@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留言板 · 阳谷县第一中学（非官方页面）</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/board.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="loader-mark">阳</div></div>
+<div class="progress"><i id="bar"></i></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">阳</span>
+      <span class="logo-txt">阳谷一中<em>CAMPUS</em></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="index.html#about">学校简介</a>
+      <a href="index.html#scores">录取分数线</a>
+      <a href="index.html#gaokao">高考成绩</a>
+      <a href="index.html#campus">校园风光</a>
+      <a href="index.html#voices">学生评价</a>
+      <a href="board.html" class="active">留言板</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main style="padding-top:100px">
+  <section class="sec" id="board" style="padding-top:10px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">留言</span>
+        <h2 data-edit-key="board-title">留言板</h2>
+        <p data-edit-key="board-desc">写下你想说的话，留言会保存在服务器上，所有人都能看到。</p>
+      </div>
+      <div class="board-grid">
+        <form class="board-form reveal" id="boardForm" style="--i:1">
+          <div class="form-row">
+            <div>
+              <label for="nick">昵称</label>
+              <input id="nick" maxlength="14" placeholder="选填，默认“匿名同学”">
+            </div>
+            <div>
+              <label for="grade">年级 <em>*</em> <small>入学年份（4 位数字）</small></label>
+              <input id="grade" maxlength="4" placeholder="如 2024" inputmode="numeric" autocomplete="off" required>
+            </div>
+          </div>
+          <label for="msg">留言内容 <em>*</em></label>
+          <textarea id="msg" maxlength="200" placeholder="比如：祝今年高考的学长学姐一切顺利。"></textarea>
+          <label class="img-pick" id="imgPick">
+            <div class="img-pick-icon">🖼️</div>
+            <div class="img-pick-txt"><b>添加图片（可选）</b>支持 JPG / PNG，自动压缩</div>
+            <div class="img-preview" id="imgPreview">
+              <img id="imgPreviewImg" alt="">
+              <button type="button" id="imgPreviewDel" title="移除">×</button>
+            </div>
+            <input type="file" id="imgInput" accept="image/*" hidden>
+          </label>
+          <button class="btn primary" type="submit" id="boardSubmit">发布留言</button>
+        </form>
+        <div class="msg-list-wrap reveal" style="--i:2">
+          <ul class="msg-list" id="msgList"></ul>
+          <button class="msg-more" id="msgMore" type="button">
+            <span class="msg-more-text">展开更多留言</span>
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 8 11 13 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-bot" style="border-top:0;padding-top:0">
+      <span>© 2026 校园印象 · 非官方网站</span>
+      <span class="online-badge"><i></i>在线 <b id="onlineCount">--</b> 人</span>
+      <span class="right">
+        <a href="index.html">← 回到首页</a>
+        <span class="sep">·</span>
+        <a id="adminEntry">管理入口</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div class="admin-bar" id="adminBar">
+  <button class="admin-fab" id="adminFab" type="button" aria-label="管理菜单">⚙</button>
+  <div class="admin-panel" id="adminPanel">
+    <span class="who">管理员</span>
+    <button id="btnEdit">✏️ 编辑</button>
+    <span class="sep"></span>
+    <button id="btnLogout">退出</button>
+  </div>
+</div>
+
+<div class="modal" id="loginModal">
+  <div class="modal-card">
+    <h3>管理员登录</h3>
+    <p class="sub">请输入管理员密码，登录后可删除留言。</p>
+    <label for="pwd">密码</label>
+    <input type="password" id="pwd" placeholder="请输入管理员密码" autocomplete="current-password">
+    <div class="modal-actions">
+      <button class="btn ghost" id="loginCancel" type="button">取消</button>
+      <button class="btn primary" id="loginOk" type="button">登录</button>
+    </div>
+  </div>
+</div>
+
+<div class="viewer" id="viewer"><img id="viewerImg" alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/app.js"></script>
+<script src="assets/board.js"></script>
+</body>
+</html>

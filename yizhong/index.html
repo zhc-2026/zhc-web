@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阳谷县第一中学 · 校园印象（非官方页面）</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="loader-mark">阳</div></div>
+<div class="progress"><i id="bar"></i></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">阳</span>
+      <span class="logo-txt">阳谷一中<em>CAMPUS</em></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#about">学校简介</a>
+      <a href="#scores">录取分数线</a>
+      <a href="#gaokao">高考成绩</a>
+      <a href="#campus">校园风光</a>
+      <a href="#voices">学生评价</a>
+      <a href="board.html">留言板</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap announce-wrap" id="announceWrap" style="padding-top:84px">
+    <div class="announce card">
+      <div class="announce-icon">📢</div>
+      <div class="announce-body">
+        <b>公告</b>
+        <p id="announceText"></p>
+      </div>
+      <button class="announce-close" id="announceClose" title="关闭">×</button>
+    </div>
+  </div>
+
+  <section class="hero" id="top">
+    <canvas id="fx"></canvas>
+    <div class="wrap hero-inner">
+      <span class="badge">⚠ 非官方页面 · 学生个人制作</span>
+      <h1 class="hero-title" id="heroTitle" data-edit-key="hero-title" data-plain="true">阳谷县第一中学</h1>
+      <p class="hero-sub" data-edit-key="hero-sub">一间教室，三年时光。这里记录的是走廊里的风、晚自习的灯，和一整个年级的青春。</p>
+      <div class="hero-cta">
+        <a href="#about" class="btn primary">开始浏览 →</a>
+        <button class="btn ghost" id="blessBtn">✨ 抽一句高考祝福</button>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint"><i></i>向下滚动</a>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">01 / 关于</span>
+        <h2>学校简介</h2>
+        <p>一所从抗日烽火中走来的老校，八十多年来始终是鲁西县域高中的标杆。</p>
+      </div>
+      <div class="about-grid">
+        <article class="card about-text reveal" style="--i:1">
+          <p data-edit-key="about-p1">阳谷县第一中学创办于1940年12月，是冀鲁豫边区政府创建的第一所中学，初名“湖西抗日中学”，后曾易名冀鲁豫边区二中、平原省立阳谷中学等，1993年定名为阳谷县第一中学。学校位于山东省聊城市阳谷县育英街261号，占地140余亩，现有2个校区、86个教学班。</p>
+          <p data-edit-key="about-p2">校训为“追求卓越，止于至善”，校风为“团结勤奋，求实创新”。八十余年来，学校累计培养毕业生4万余名，向高校输送新生2万余人。学校先后获评“全国师德建设示范基地”“山东省规范化学校”“省级文明校园”等称号。</p>
+          <p class="note" data-edit-key="about-note">＊ 本页为非官方展示页面，数据整理自公开渠道，仅供参考。</p>
+        </article>
+        <div class="stats reveal" style="--i:2">
+          <div class="stat"><b class="count" data-target="4663">0</b><span>在校学生</span></div>
+          <div class="stat"><b class="count" data-target="405">0</b><span>教职工</span></div>
+          <div class="stat"><b class="count" data-target="86">0</b><span>教学班级</span></div>
+          <div class="stat"><b class="count" data-target="84.12" data-suffix="%" data-decimals="2">0</b><span>本科上线率</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="scores">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">02 / 数据</span>
+        <h2 data-edit-key="scores-title">录取分数线</h2>
+        <p data-edit-key="scores-desc">以下为阳谷县第一中学近三年的统招录取分数线（阳谷县最低控制线2025年为324.6分）。2024—2025年因报考人数波动，录取线相对偏低。</p>
+      </div>
+      <div class="tabs reveal" id="scoreTabs">
+        <button data-year="2025" class="active">2025</button>
+        <button data-year="2024">2024</button>
+        <button data-year="2023">2023</button>
+      </div>
+      <div class="bars card reveal" id="scoreBars"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="gaokao">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">03 / 成绩</span>
+        <h2 data-edit-key="gaokao-title">历年高考高分</h2>
+        <p data-edit-key="gaokao-desc">数据整理自公开报道，供参考。</p>
+      </div>
+      <div class="tl">
+        <div class="tl-item reveal" style="--i:0">
+          <div class="tl-card card">
+            <b>2025 年</b>
+            <p data-edit-key="gaokao-2025">最高分 <em>672</em> 分，本科上线率 <em>84.12%</em>，清北录取 <em>1</em> 人。双一流录取 <em>59</em> 人，600 分以上 <em>28</em> 人。</p>
+          </div>
+        </div>
+        <div class="tl-item reveal" style="--i:1">
+          <div class="tl-card card">
+            <b>2024 年</b>
+            <p data-edit-key="gaokao-2024">暂无公开的高分数据，欢迎补充。</p>
+          </div>
+        </div>
+        <div class="tl-item reveal" style="--i:2">
+          <div class="tl-card card">
+            <b>2023 年</b>
+            <p data-edit-key="gaokao-2023">崔同学高考 <em>700</em> 分，其中数学 <em>149</em> 分、语文 128 分、英语 137 分。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="campus">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">04 / 风景</span>
+        <h2 data-edit-key="campus-title">校园风光</h2>
+        <p data-edit-key="campus-desc">把鼠标移到卡片上，会有轻微的光影跟随。管理员登录后点击卡片即可上传多张照片。</p>
+      </div>
+      <div class="scenes">
+        <figure class="scene tilt reveal" style="--g1:#dbeafe;--g2:#93c5fd;--i:0">
+          <div class="scene-art" data-img-key="img-scene-1"><span>🏫</span><i class="edit-hint">点击编辑图片</i></div>
+          <figcaption><b data-edit-key="scene-cap-1">校门</b><i data-edit-key="scene-sub-1">育英街261号</i></figcaption>
+        </figure>
+        <figure class="scene tilt reveal" style="--g1:#dcfce7;--g2:#86efac;--i:1">
+          <div class="scene-art" data-img-key="img-scene-2"><span>🏃</span><i class="edit-hint">点击编辑图片</i></div>
+          <figcaption><b data-edit-key="scene-cap-2">操场</b><i data-edit-key="scene-sub-2">跑操的号子声</i></figcaption>
+        </figure>
+        <figure class="scene tilt reveal" style="--g1:#fef3c7;--g2:#fcd34d;--i:2">
+          <div class="scene-art" data-img-key="img-scene-3"><span>📚</span><i class="edit-hint">点击编辑图片</i></div>
+          <figcaption><b data-edit-key="scene-cap-3">图书楼</b><i data-edit-key="scene-sub-3">十余万册藏书</i></figcaption>
+        </figure>
+        <figure class="scene tilt reveal" style="--g1:#fce7f3;--g2:#f9a8d4;--i:3">
+          <div class="scene-art" data-img-key="img-scene-4"><span>🔬</span><i class="edit-hint">点击编辑图片</i></div>
+          <figcaption><b data-edit-key="scene-cap-4">实验楼</b><i data-edit-key="scene-sub-4">八个理化生实验室</i></figcaption>
+        </figure>
+        <figure class="scene tilt reveal" style="--g1:#e0e7ff;--g2:#a5b4fc;--i:4">
+          <div class="scene-art" data-img-key="img-scene-5"><span>🎵</span><i class="edit-hint">点击编辑图片</i></div>
+          <figcaption><b data-edit-key="scene-cap-5">艺术教室</b><i data-edit-key="scene-sub-5">琴房与书画室</i></figcaption>
+        </figure>
+        <figure class="scene tilt reveal" style="--g1:#cffafe;--g2:#67e8f9;--i:5">
+          <div class="scene-art" data-img-key="img-scene-6"><span>🌇</span><i class="edit-hint">点击编辑图片</i></div>
+          <figcaption><b data-edit-key="scene-cap-6">校园晚霞</b><i data-edit-key="scene-sub-6">放学路上的天空</i></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="customZone">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">★ / 扩展</span>
+        <h2>更多内容</h2>
+        <p>以下内容由管理员在编辑模式下自由添加。</p>
+      </div>
+      <div class="custom-grid" id="customGrid"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="voices">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag">05 / 声音</span>
+        <h2 data-edit-key="voices-title">学生交流评价</h2>
+        <p data-edit-key="voices-desc">来自同学的真实声音，自动轮播。欢迎在下方写下你的那一句。</p>
+      </div>
+      <div class="carousel card reveal" id="carousel">
+        <div class="track" id="track"></div>
+      </div>
+      <div class="dots" id="dots"></div>
+
+      <div class="review-actions">
+        <button class="btn ghost" id="reviewToggle" type="button">✍️ 我也说一句</button>
+      </div>
+
+      <form class="review-form card" id="reviewForm">
+        <label for="reviewQuote">你的评价 <em>*</em></label>
+        <textarea id="reviewQuote" maxlength="200" placeholder="写点你在阳谷一中的记忆、感受或想说的话……"></textarea>
+        <label for="reviewWho">署名 <em>*</em> <small>如 高二（3）班 · 王同学</small></label>
+        <input id="reviewWho" maxlength="30" placeholder="高二（3）班 · 王同学">
+        <div class="review-form-actions">
+          <button class="btn ghost" id="reviewCancel" type="button">取消</button>
+          <button class="btn primary" id="reviewSubmit" type="submit">发布评价</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="logo">
+        <span class="logo-mark">阳</span>
+        <span class="logo-txt">阳谷一中<em>CAMPUS</em></span>
+      </div>
+      <p class="disc" data-edit-key="foot-disc">
+        本站为个人制作的<strong>非官方</strong>展示页面，与阳谷县第一中学无任何隶属关系。
+        页面内的学校简介、录取分数线、高考成绩等数据整理自公开渠道，仅供参考，
+        不构成任何报考依据。学校相关信息请以官方发布为准。
+      </p>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 校园印象 · 非官方网站 · 仅供学习与演示</span>
+      <span class="online-badge"><i></i>在线 <b id="onlineCount">--</b> 人</span>
+      <span class="right">
+        <a id="docEntry">使用说明 & 免责声明</a>
+        <span class="sep">·</span>
+        <a href="#top">回到顶部 ↑</a>
+        <span class="sep">·</span>
+        <a id="adminEntry">管理入口</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div class="admin-bar" id="adminBar">
+  <button class="admin-fab" id="adminFab" type="button" aria-label="管理菜单">⚙</button>
+  <div class="admin-panel" id="adminPanel">
+    <span class="who">管理员</span>
+    <button id="btnEdit">✏️ 编辑</button>
+    <button id="btnSave">💾 保存</button>
+    <span class="sep"></span>
+    <button id="btnNotice">📢 公告</button>
+    <button id="btnAdd">➕ 卡片</button>
+    <span class="sep"></span>
+    <button id="btnExport">📤 导出</button>
+    <button id="btnImport">📥 导入</button>
+    <button id="btnReset" class="danger">↺ 重置</button>
+    <span class="sep"></span>
+    <button id="btnLogout">退出</button>
+  </div>
+</div>
+
+<div class="admin-notice" id="noticePanel">
+  <h4>编辑公告栏</h4>
+  <label>公告内容（留空则隐藏公告栏）</label>
+  <textarea id="noticeText" maxlength="300" placeholder="例如：欢迎各位同学访问本站，页面内容持续更新中。"></textarea>
+  <div class="admin-add-actions">
+    <button class="btn ghost" id="noticeCancel" type="button">取消</button>
+    <button class="btn primary" id="noticeSave" type="button">保存</button>
+  </div>
+</div>
+
+<div class="admin-add" id="addPanel">
+  <h4>添加内容卡片</h4>
+  <label>标题</label>
+  <input type="text" id="addTitle" maxlength="40" placeholder="例如：社团活动">
+  <label>正文</label>
+  <textarea id="addBody" maxlength="400" placeholder="写点什么……支持换行"></textarea>
+  <label>配图（可选）</label>
+  <input type="file" id="addImg" accept="image/*">
+  <div class="admin-add-actions">
+    <button class="btn ghost" id="addCancel" type="button">取消</button>
+    <button class="btn primary" id="addOk" type="button">添加</button>
+  </div>
+</div>
+
+<div class="modal" id="loginModal">
+  <div class="modal-card">
+    <h3>管理员登录</h3>
+    <p class="sub">请输入管理员密码，登录后可编辑页面内容。</p>
+    <label for="pwd">密码</label>
+    <input type="password" id="pwd" placeholder="请输入管理员密码" autocomplete="current-password">
+    <div class="modal-actions">
+      <button class="btn ghost" id="loginCancel" type="button">取消</button>
+      <button class="btn primary" id="loginOk" type="button">登录</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="docModal">
+  <div class="modal-card">
+    <h3>使用说明 & 免责声明</h3>
+    <p class="sub">请在使用本站前阅读以下内容。</p>
+    <div class="doc-body">
+      <h4>一、关于本站</h4>
+      <p>本站是<strong>学生个人制作的非官方页面</strong>，与阳谷县第一中学没有任何隶属关系，不代表学校立场。</p>
+      <h4>二、数据来源</h4>
+      <p>页面内的学校简介、录取分数线、高考成绩等数据整理自政府公开信息、媒体报道等公开渠道，<strong>仅供参考</strong>，不构成任何报考依据。学校相关信息请以官方发布为准。</p>
+      <h4>三、留言板与评价规则</h4>
+      <ul>
+        <li>请勿发布违法违规、辱骂、广告等内容</li>
+        <li>留言与评价为访客自发提交，本站不审核每条内容，不代表本站观点</li>
+        <li>管理员有权删除不当内容</li>
+      </ul>
+      <h4>四、图片使用</h4>
+      <p>校园风光照片由管理员上传。如您是照片作者且不希望被展示，请联系管理员删除。</p>
+      <div class="warn">
+        <strong>免责声明：</strong>本站为个人学习与展示用途，如学校方面认为内容不妥，请联系删除，我们将第一时间处理。
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn primary" id="docClose" type="button">我知道了</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="galleryModal">
+  <div class="modal-card gallery-card">
+    <h3 id="galleryTitle">编辑图片</h3>
+    <p class="sub">可上传多张图片，访客端会以轮播方式展示。图片自动压缩到 1280px 以内。</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="modal-actions" style="flex-wrap:wrap">
+      <button class="btn ghost" id="galleryUploadBtn" type="button" style="flex:1;min-width:130px">＋ 添加图片</button>
+      <button class="btn ghost" id="galleryClose" type="button" style="flex:1;min-width:100px">完成</button>
+    </div>
+    <input type="file" id="galleryInput" accept="image/*" multiple hidden>
+  </div>
+</div>
+
+<div class="viewer" id="viewer"><img id="viewerImg" alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/app.js"></script>
+<script src="assets/home.js"></script>
+</body>
+</html>
